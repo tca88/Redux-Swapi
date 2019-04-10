@@ -26,12 +26,12 @@ export const charsReducer = (state = initialState, action) => {
         isFetching: false,
         characters: action.payload
       };
-    case FETCH_SWAPI_FAILURE:
-      return {
-        ...state,
-        error: "Oh no! error!",
-        isFetching: true
-      };
+    // case FETCH_SWAPI_FAILURE:
+    //   return {
+    //     ...state,
+    //     error: "Oh no! error!",
+    //     isFetching: true
+    //   };
     default:
       return state;
   }

@@ -16,19 +16,18 @@ export const getSwapiPeople = () => dispatch => {
   // when making async calls, you first dispatch a start action, then start the API call.
   dispatch({ type: FETCH_SWAPI_START });
   axios
-    .get("https://swapi.co/api/people")
+    .get("https://swapi.co/api/people/?format=json")
     .then(res => {
       dispatch({
         type: FETCH_SWAPI_SUCCESS,
-        payload: res.data
+        payload: res.data.results
       });
-      console.log(res);
+      console.log("lookie", res);
     })
     .catch(err => {
       dispatch({
         type: FETCH_SWAPI_FAILURE,
         payload: err
       });
-      console.log(err);
     });
 };
