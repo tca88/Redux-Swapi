@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
 import { CharacterList } from "../components";
 import { getSwapiPeople } from "../actions";
@@ -17,7 +18,11 @@ class CharacterListView extends React.Component {
       console.log("data is being fetched!");
     }
 
-    console.log("look", this.props);
+    if (this.props.characters.length === 0) {
+      return <Loader type="Plane" color="#00BFFF" height="100" width="100" />;
+    }
+
+    // console.log("look", this.props);
 
     return (
       <div className="CharactersList_wrapper">

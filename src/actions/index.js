@@ -22,7 +22,7 @@ export const getSwapiPeople = () => dispatch => {
         type: FETCH_SWAPI_SUCCESS,
         payload: res.data.results
       });
-      console.log("lookie", res);
+      // console.log("lookie", res);
     })
     .catch(err => {
       dispatch({
